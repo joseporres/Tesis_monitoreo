@@ -10,11 +10,11 @@ Para empezar, se tiene que tener instalado minikube y kubectl de antemano.
 minikube start
 ```
 
-2. Correr el script de m2ktransform_metrics, que realiza la migracion de la aplicacion y levanta el sistema de monitoreo automaticamente.
+2. Se debería correr el script de m2ktransform_metrics, que realiza la migracion de la aplicacion y levanta el sistema de monitoreo automaticamente.
 ```
 ./m2ktransform_metrics.sh src
 ```
-Para esta aplicacion no es necesario correr ese script, a no ser que se tenga previo conocimiento del funcionamiento de move2kube, ya que con la aplicacion que estamos probando, genera una imagen errada, por lo que se tuvo que modificar.
+Para esta aplicacion no es necesario correr ese script, a no ser que se tenga previo conocimiento del funcionamiento de move2kube, ya que con la aplicacion que estamos probando, move2kube genera una imagen errada y se tuvo que modificar el Dockerfile generado por move2kube para que funcione correctamente.
 
 Por esta razon solo se correra el script deploy_metrics, ya que los archivos de configuracion de kubernetes ya se encuentran en la carpeta myproject.
 ```
@@ -27,7 +27,7 @@ Ahora solo falta desplegar la aplicacion migrada al cluster de kubernetes. Cabe 
 Por esta razon solamente correremos:
 ```
 kubectl apply -f myproject/deploy/yamls
-``
+```
 
 Con esto ya se tendria todo el sistema de monitoreo de recursos del cluster.
 
