@@ -7,10 +7,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 import io.prometheus.client.spring.boot.EnablePrometheusEndpoint;
+import io.prometheus.client.spring.boot.EnableSpringBootMetricsCollector;
 
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnablePrometheusEndpoint
+@EnableSpringBootMetricsCollector
 public class LegacyJavaApplication {
 
 	public static void main(String[] args) {
