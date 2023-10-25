@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+ name: your-app-service-monitor
+ labels:
+   release: prometheus
+spec:
+ selector:
+   matchLabels:
+     move2kube.konveyor.io/service: legacy-java-application
+ endpoints:
+ - port: "8080"  # Specify the port where your application exposes metrics (port 8080)
+   path: /prometheus  # Specify the path where metrics are exposed

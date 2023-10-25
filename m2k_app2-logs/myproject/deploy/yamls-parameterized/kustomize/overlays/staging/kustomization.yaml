@@ -1,0 +1,9 @@
+patches:
+  - path: apps-v1-deployment-legacy-java-application.yaml
+    target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: legacy-java-application
+resources:
+  - ../../base

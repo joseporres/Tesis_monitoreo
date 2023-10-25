@@ -31,4 +31,4 @@ kubectl apply -f myproject/deploy/yamls
 
 Con esto ya se tendria todo el sistema de monitoreo de recursos del cluster.
 
-Despues solo seria necesario crear los queries necesarios usando prometheus y utilizarlos en graphana para graficarlos o mostrarlos en un dashbord mas user friendly.
+Despues solo seria necesario crear los queries necesarios usando prometheus y utilizarlos en graphana para graficarlos o mostrarlos en un dashboard mas user friendly.

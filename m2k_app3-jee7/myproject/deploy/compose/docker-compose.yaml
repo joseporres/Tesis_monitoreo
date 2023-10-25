@@ -1,0 +1,8 @@
+version: "3.5"
+services:
+  petstoreee7:
+    container_name: petstoreee7
+    image: index.docker.io/joseporres/petstoreee7:latest
+    ports:
+      - target: 8080
+        published: 8080

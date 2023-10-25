@@ -1,0 +1,4 @@
+resources:
+  - myproject-ingress.yaml
+  - petstoreee7-deployment.yaml
+  - petstoreee7-service.yaml
