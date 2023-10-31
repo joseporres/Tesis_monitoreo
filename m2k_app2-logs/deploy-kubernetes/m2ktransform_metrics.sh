@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Check if Minikube is running
-if [ "$(minikube status | grep 'minikube: Stopped')" ]; then
-  echo "Minikube is not running. Starting Minikube..."
-  minikube start
-fi
-
 # Set the Kubernetes context to the Minikube cluster
 kubectl config use-context minikube
 
@@ -17,6 +11,10 @@ if [ "$#" -ne 1 ]; then
 fi
 
 src_directory="$1"
+
+# Step 0: Run 'move2kube plan' to generate the plan file
+echo "Running 'move2kube plan' on $src_directory"
+move2kube plan "$src_directory"
 
 # Step 1: Run the 'move2kube transform' command on the source directory
 echo "Running 'move2kube transform' on $src_directory"

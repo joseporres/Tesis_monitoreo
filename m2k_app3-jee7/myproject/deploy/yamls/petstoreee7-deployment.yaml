@@ -6,13 +6,17 @@ metadata:
     move2kube.konveyor.io/service: petstoreee7
   name: petstoreee7
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       move2kube.konveyor.io/service: petstoreee7
   strategy: {}
   template:
     metadata:
+      annotations: 
+        prometheus.io/scrape: "true" # Anotación para que Prometheus haga scraping
+        prometheus.io/port: "8080" # Anotación para que Prometheus haga scraping en el puerto 8080
+        prometheus.io/path: "/prometheus" # Anotación para que Prometheus haga scraping en el path /prometheus
       creationTimestamp: null
       labels:
         move2kube.konveyor.io/service: petstoreee7

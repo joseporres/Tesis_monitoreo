@@ -30,7 +30,11 @@ echo "Installing kube-prometheus-stack"
 helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack
 
 # Step 5: Install Loki using Helm
-echo "Installing Loki using Helm"
-helm install loki grafana/loki-stack 
+# echo "Installing Loki using Helm"
+# helm install loki grafana/loki-stack 
+
+# Step 5: Apply the customized ServiceMonitor for the application
+echo "Applying the ServiceMonitor for the application"
+kubectl apply -f service-monitor/service_monitor.yaml
 
 echo "Script execution complete."

@@ -18,6 +18,10 @@ fi
 
 src_directory="$1"
 
+# Step 0: Run 'move2kube plan' to generate the plan file
+echo "Running 'move2kube plan' on $src_directory"
+move2kube plan "$src_directory"
+
 # Step 1: Run the 'move2kube transform' command on the source directory
 echo "Running 'move2kube transform' on $src_directory"
 move2kube transform "$src_directory"
@@ -35,7 +39,11 @@ echo "Installing kube-prometheus-stack"
 helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack
 
 # Step 5: Install Loki using Helm
-echo "Installing Loki using Helm"
-helm install loki grafana/loki-stack 
+#echo "Installing Loki using Helm"
+#helm install loki grafana/loki-stack 
+
+# Step 5: Apply the customized ServiceMonitor for the application
+echo "Applying the ServiceMonitor for the application"
+kubectl apply -f service-monitor/service_monitor.yaml
 
 echo "Script execution complete."
