@@ -1,4 +1,0 @@
-resources:
-  - legacy-java-application-deployment.yaml
-  - legacy-java-application-service.yaml
-  - myproject-ingress.yaml

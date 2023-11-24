@@ -1,8 +1,0 @@
-version: "3.5"
-services:
-  legacy-java-application:
-    container_name: legacy-java-application
-    image: index.docker.io/joseporres/legacy-java-application:latest
-    ports:
-      - target: 8080
-        published: 8080

@@ -24,11 +24,11 @@ Esto levantara todo el sistema de monitoreo.
 
 Ahora solo falta desplegar la aplicacion migrada al cluster de kubernetes. Cabe resaltar que move2kube solo realiza la migracion mas no el despliegue de la aplicacion.
 
-Por esta razon solamente correremos:
+Por esta razon solamente correremos el siguiente comando para desplegar la aplicación migrada:
 ```
 kubectl apply -f myproject/deploy/yamls
 ```
 
 Con esto ya se tendria todo el sistema de monitoreo de recursos del cluster.
 
-Despues solo seria necesario crear los queries necesarios usando prometheus y utilizarlos en graphana para graficarlos o mostrarlos en un dashboard mas user friendly.
+Despues solo seria necesario crear los queries necesarios usando prometheus y utilizarlos en grafana para graficarlos o mostrarlos en un dashboard mas user friendly.
